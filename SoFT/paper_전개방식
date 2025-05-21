@@ -1,0 +1,28 @@
+- Intro
+	1. social recommender system의 필요성
+		- 방대한 선택지 속에서 user에게 최적의 선택을 할 수 있도록 도울 수 있음(가까운 user를 통해)
+		- 기존 recommender system이 제공했던 collaborative filtering과 유사하지만, 더욱 고차원의 모델링을 통해서 user간의 관계를 더욱 풍부하게 표현할 수 있음
+		- 
+	2. social recommender system에서 transformer 구조만의 특징과 이를 활용하는 것에 대한 의의
+		- 공통점
+			- Graph 데이터에 대한 사용(user-item + social graph)
+		- 차이점("Major Contributions" - 이 부분에서 예시를 들어서 표현해주기)
+			- 구조
+				- GDSRec : Attention 메커니즘 사용(Encoder Only)
+				- SocialRecformer : Encoder + Decoder(Transformer와 조금 더 유사함)
+			- 들어가는 데이터의 형태
+				- GDSRec : Decentralized Graph(node by node)
+				- SocialRecformer : user sequence + item sequence(following user seq) + rating + etc ... 
+			- Aggregation의 종류
+				- GDSRec : Item + User + Social
+				- SocialRecforemr : User aggr + Item Aggr + Total Aggr(Cross attention)
+			- Embedding 방식(==데이터 형태)
+				- user / item / rating 따로
+				- rating : user bias(embedding table) + rating bias vector(fc layer)
+				
+		- GNN에 대한 언급과 비교(Q. GDSRec이 GNN구조라고 할 수 있는지? - SASRec과 구조가 비슷함)
+		- (Q. GNN 구조에서는 data augmentation이 불가능한 것인지에 대해 조사해보기)
+			- GDSRec구조에서도 data augmentation이 가능하긴 하지만, 큰 의미가 없다고 생각됨
+			
+	3. 
+		
